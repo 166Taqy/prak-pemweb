@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Pemweb Minggu 5</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); scale(1.2);">
+        <div style="margin-bottom: 10px;">
+            <input placeholder="..." type="text" id="hasil" readonly style="width: 100%;">
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <input type="button" value="1" onclick="appendNumber('1')" style="flex: 1;">
+            <input type="button" value="2" onclick="appendNumber('2')" style="flex: 1;">
+            <input type="button" value="3" onclick="appendNumber('3')" style="flex: 1;">
+            <input type="button" value="+" onclick="appendOperator('+')" style="flex: 1;">
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <input type="button" value="4" onclick="appendNumber('4')" style="flex: 1;">
+            <input type="button" value="5" onclick="appendNumber('5')" style="flex: 1;">
+            <input type="button" value="6" onclick="appendNumber('6')" style="flex: 1;">
+            <input type="button" value="-" onclick="appendOperator('-')" style="flex: 1;">
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <input type="button" value="7" onclick="appendNumber('7')" style="flex: 1;">
+            <input type="button" value="8" onclick="appendNumber('8')" style="flex: 1;">
+            <input type="button" value="9" onclick="appendNumber('9')" style="flex: 1;">
+            <input type="button" value="*" onclick="appendOperator('*')" style="flex: 1;">
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+            <input type="button" value="C" onclick="clearResult()" style="flex: 1;">
+            <input type="button" value="0" onclick="appendNumber('0')" style="flex: 1;">
+            <input type="button" value="=" onclick="calculateResult()" style="flex: 1;">
+            <input type="button" value="/" onclick="appendOperator('/')" style="flex: 1;">
+        </div>
+    </div>
+
+    <script>
+        function appendNumber(num) {
+            document.getElementById('hasil').value += num;
+        }
+
+        function appendOperator(operator) {
+            document.getElementById('hasil').value += operator;
+        }
+
+        function clearResult() {
+            document.getElementById('hasil').value = '';
+        }
+
+        function calculateResult() {
+            try {
+                let hasil = eval(document.getElementById('hasil').value);
+                document.getElementById('hasil').value = hasil;
+            } catch (error) {
+                document.getElementById('hasil').value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
