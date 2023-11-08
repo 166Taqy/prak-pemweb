@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Pemrograman Web - Minggu Keempat</title>
+</head>
+<body>
+    <script>
+        let total_bilangan = 20;
+        let bilangan_ganjil = 0;
+        let bilangan_genap = 0;
+
+        for (let i = 1; i <= total_bilangan; i++) {
+            if (i % 2 === 0) {
+                bilangan_genap++;
+            } else {
+                bilangan_ganjil++;
+            }
+        }
+        console.log(`Jumlah Bilangan Ganjil: ${bilangan_ganjil}`);
+        console.log(`Jumlah Bilangan Genap: ${bilangan_genap}`);
+        alert(`Jumlah Bilangan Ganjil: ${bilangan_ganjil}\nJumlah Bilangan Genap: ${bilangan_genap}`);
+    </script>
+</body>
+</html>
